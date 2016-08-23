@@ -5,19 +5,7 @@ This repo contains a collection of bash scripts for setting up routing torrent t
 
 [user_filter](user_filter) contains scripts that setup a routing table and configure iptables to route all traffic from a specific user over the VPN interface.
 
-OpenVPN
+My deployment
 --------------------------
+If I need to restore this project I need to pull it as root to /etc/ and add a file named userpass.data which contains my PIA username on the first line, and my PIA password on the second line.
 
-To use these scripts with OpenVPN:
-
-1. Make a clone of the repo and set the correct values for the interfaces and user in vpn_base.sh.
-
-2. Edit the openvpn client config and add this line:
-
- ```up "/path/to/repo/link_up_user_filter.sh"``` with the correct path to the cloned repo.
-
- To allow executing external scripts automatically when starting the openvpn client, run openvpn with the argument
-
- ```--script-security 2``` or add this line to the client config: ```script-security 2```
-
-3. Run openvpn
